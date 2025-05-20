@@ -7,7 +7,7 @@ switch (opciones)
 {
     case 1:
         Console.WriteLine("Ingrese un numero \n");
-        int a = int.Parse(Console.ReadLine());
+        int a = int.Parse(Console.ReadLine());//Usar TryParse
         Console.WriteLine("Ingrese un numero\n");
         int b = int.Parse(Console.ReadLine());
         int resultadoSuma = a + b;
@@ -36,7 +36,7 @@ switch (opciones)
         int g = int.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese un numero\n");
         int h = int.Parse(Console.ReadLine());
-        int resultadoDivision = g / h;
+        int resultadoDivision = g /h;
         Console.WriteLine("El resultado de la suma es:" + resultadoDivision);
         break;
 }
