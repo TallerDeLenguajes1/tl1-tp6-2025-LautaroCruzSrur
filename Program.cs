@@ -3,36 +3,37 @@ bool vuelta = true;
 Console.WriteLine("Hola Bienvenido a la calculadora");
 while (vuelta)
 {
-    Console.Write("\nIngrese la opcion que desea realizar: \n 1) Suma \n 2)Resta \n 3)Multiplicacion \n 4)Dividir\n");
+    Console.Write("\nIngrese la opcion que desea realizar: \n 1)Valor Absoluto \n 2)Cuadrado \n 3)Raiz Cuadrada \n 4)Seno \n 5)Coseno \n 6) Parte entera de un tipo Float");
 int opciones = 0;
 bool resultado = int.TryParse(Console.ReadLine(), out opciones);
-Console.WriteLine("Ingrese dos números:");
+Console.WriteLine("Ingrese un números:");
 
 Console.Write("Primer número: ");
-bool validoA = int.TryParse(Console.ReadLine(), out int a);
+bool validoA = double.TryParse(Console.ReadLine(), out double a);
 
-Console.Write("Segundo número: ");
-bool validoB = int.TryParse(Console.ReadLine(), out int b);
 
-if (resultado && validoA && validoB)
+
+if (resultado && validoA )
 {
         switch (opciones)
         {
             case 1:
-                int resultadoSuma = a + b;
-                Console.WriteLine("El resultado de la suma es:" + resultadoSuma);
+                Console.Write($"El valor absoluto de({a}) es {Math.Abs(a)}");
                 break;
             case 2:
-                int resultadoResta = a - b;
-                Console.WriteLine("El resultado de la suma es:" + resultadoResta);
+                Console.Write($"La Raiz cuadrada de({a}) es {Math.Pow(a,2)}");
                 break;
             case 3:
-                int resultadoMultiplicacion = a * b;
-                Console.WriteLine("El resultado de la suma es:" + resultadoMultiplicacion);
+                Console.Write($"El cuadrado de({a}) es {Math.Sqrt(a)}");
                 break;
             case 4:
-                int resultadoDivision = a / b;
-                Console.WriteLine("El resultado de la suma es:" + resultadoDivision);
+                Console.Write($"El Seno de({a}) es {Math.Asin(a)}");
+                break;
+            case 5:
+                Console.Write($"El Coseno de({a}) es {Math.Acos(a)}");
+                break;
+            case 6:
+                Console.Write($"La Parte entera  de({a}) es {Math.Floor(a)}");
                 break;
         }
         Console.WriteLine("Desea Realizar otro calculo? Y/N");
